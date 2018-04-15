@@ -13,15 +13,16 @@ from passlib.hash import sha256_crypt
 
 app = Flask(__name__)
 
+#inicjalizacja MySQL
+mysql = MySQL(app)
 #Konfiguracja DB
-app.config['MYSQL_HOST'] = 'u8'
+app.config['MYSQL_HOST'] = 'skupa.atthost24.pl'
 app.config['MYSQL_USER'] = '4173_Kajak'
 app.config['MYSQL_PASSWORD'] = 'czatkajak1'
 app.config['MYSQL_DB'] = '4173_Kajak'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
-#inicjalizacja MySQL
-mysql = MySQL(app)
+
 
 if __name__ == 'main':
     app.run()
@@ -68,7 +69,7 @@ def register():
         #Zamykam połączenie/strumień danych z DB
         cur.close()
 
-        redirect(url_for('home'))
+        #redirect(url_for('home'))
     
     return render_template("register.html", form=form)
 
