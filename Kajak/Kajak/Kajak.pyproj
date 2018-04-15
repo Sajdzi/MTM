@@ -32,6 +32,7 @@
   <ItemGroup>
     <Content Include="requirements.txt" />
     <Content Include="templates\home.html" />
+    <Content Include="templates\macro_render.html" />
     <Content Include="templates\register.html" />
   </ItemGroup>
   <ItemGroup>
